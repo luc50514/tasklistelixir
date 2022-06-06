@@ -11,8 +11,10 @@ defmodule TasklistelixirTest do
   end
 
   test "addtask adds a new task to the map" do
-    assert Tasklistelixir.addtask(%{}, ~D[2022-06-05], "Ebill Added") == %{~D[2022-06-05] => ["Ebill Added"]}
-    assert Tasklistelixir.addtask(%{}, ~D[2022-06-05], "Ebill2 Added") == %{~D[2022-06-05] => ["Ebill2 Added"]}
+    task1 = UUID.uuid1()
+    task2 = UUID.uuid1()
+    assert Tasklistelixir.addtask(%{}, task1, ~D[2022-06-05], "Ebill Added") == %{task1 => ["Ebill Added"]}
+    assert Tasklistelixir.addtask(%{}, task2, ~D[2022-06-05], "Ebill2 Added") == %{task2 => ["Ebill2 Added"]}
   end
 
   test "gettask a task from the map" do
