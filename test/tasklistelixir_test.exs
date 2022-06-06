@@ -37,7 +37,7 @@ defmodule TasklistelixirTest do
     assert Tasklistelixir.value(%Tasklistelixir{top: 1, bottom: 0}) == 0
   end
 
-  test "Adds the two values get the sum of 1/2 to get 1" do
+  test "Adds the two values get the sum of 1/2 to get %Tasklistelixir{bottom: 4, top: 4}" do
     assert Tasklistelixir.add(%Tasklistelixir{top: 1, bottom: 2},%Tasklistelixir{top: 1, bottom: 2}) == %Tasklistelixir{bottom: 4, top: 4}
   end
 
